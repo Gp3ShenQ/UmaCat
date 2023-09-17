@@ -1,0 +1,698 @@
+*
+    // border: solid 1px black
+    margin: 0px
+    padding: 0px
+    font-family: 微軟正黑體
+    box-sizing: border-box
+
+@mixin center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50% , -50%)
+    
+
+//navbar ----------------------------------
+
+.top_bar  
+    display: flex
+    height: 80px
+    position: fixed 
+    top: 0
+    left: 0
+    width: 100%
+    background-color: #DDDFDF
+    z-index: 1
+
+
+    .top-mark  //公司標章
+        width: 120px
+        height: 39px
+        margin: 20px 0px 0px 30px
+        cursor: pointer
+
+    .top-other 
+        display: flex
+        +center
+
+        .product,.information,.buy,.about 
+            height: 20px
+            margin-left: 15px
+            cursor: pointer
+            font-weight: 900
+            &:hover
+                transition: 1s
+                color: orange
+                
+    
+    .top-other2  //搜尋與語言
+        position: relative
+        display: flex
+        margin-left: auto
+        margin-top: 30px
+        height: 18px
+
+        .search,.language,.other
+            margin-left: 15px   
+            height: 18px
+            cursor: pointer
+            font-weight: 900
+            &:hover
+                transition: 1s
+                color: orange
+
+        .search
+            display: flex
+
+            .search-icon   //放大鏡 icon
+                position: relative
+                height: 17px
+                width: 20px
+
+
+        .language
+            display: flex
+        
+            .language-icon  //地球icon
+                position: relative
+                height: 17px
+                width: 17px
+                margin-right: 5px 
+                
+               
+
+
+    .other  //三條線
+        display: inline-block
+        .line
+            border: solid 2px green
+            width: 20px
+            margin: 2px 30px 0px 0px
+
+//naverbar ----------------------------------
+
+// 背景圖片 ------
+.index-pic
+    background-image: url("./icon/Umabg1.jpg")
+    height: 100vh
+    position: fixed
+    background-size: cover
+    background-position: center center
+    top: 0
+    left: 0
+    width: 100%
+// 背景圖片 ------
+// 功能列 ------
+.aboutus 
+    position: relative
+    width: 100%
+    height: 100px
+    margin-top: 970px
+    background-color: #BBADA0
+
+    .ribbon
+        +center
+        display: flex
+        width: 100%
+        justify-content: space-evenly
+
+        .info-box
+            display: flex
+            cursor: pointer
+            color: #fff
+
+        .title
+            margin-top: 8px
+            font-size: 25px
+            font-weight: 900
+        .inner
+            font-size: 5px 
+// 功能列 ------
+// 產品分類-----
+.Classification
+    position: relative
+    height: 600px
+    width: 100%
+    text-align: center
+    padding: 100px 0
+    background-color: #fff
+    .word-top
+        font-size: 60px
+    .word
+        font-size: 25px
+        margin-top: 10px
+    .commoditys 
+        display: flex
+        margin-top: 60px
+        justify-content: space-evenly
+        
+        .box-wrap
+        
+        .draw
+            width: 180px
+            height: 180px
+            border-radius: 100%
+            position: relative
+            padding: 10px
+            overflow: hidden
+            box-shadow:  0 0 20px
+            cursor: pointer
+            &:hover
+                .dra
+                    height: 100%        
+            .pic
+                width: 100%
+                height: 100%
+                border-radius: 100%
+                position: relative
+                top: 50%
+                left: 50%
+                transform: translate(-50% , -50%)
+                // background-color: #fff
+                //-------------- 暫時隱藏
+                // opacity: 0  
+                //-------------- 暫時隱藏
+                overflow: hidden 
+            
+            .dra
+                position: absolute
+                width: 100%
+                height: 0
+                left: 0
+                top: 0px
+                background-color: orange
+                display: block
+                transition-property: height
+                transition-duration: 1s
+            
+        p
+            margin-top: 30px
+            font-weight: 900
+            font-size: 30px
+            
+
+.readme
+    height: 300px   
+    width: 100%
+    display: flex
+    position: relative
+    cursor: pointer
+    
+    .tbox
+        background-color: #E2FCEF 
+        display: flex
+        align-items: center
+        justify-content: space-around
+        &:hover
+            .innerread
+                &::after
+                    width: 100%
+                    right: auto
+                    left: 0
+    .bbox
+        background-color: #BFBFBF
+        display: flex
+        align-items: center
+        justify-content: space-around
+        &:hover
+            .innerread
+                &::after
+                    width: 100%
+                    right: auto
+                    left: 0
+    .box1
+        height: 100%
+        width: 50%
+    .box2
+        height: 100%
+        width: 50%
+
+    .title
+        width: 250px
+        height: 50px
+        font-size: 26px
+        position: relative
+        font-weight: 700
+
+    .inner
+        width: 300px
+        font-size: 14px
+
+    
+    .innerread
+        width: 100px
+        font-size: 12px
+        font-weight: 700
+        position: relative
+        padding-bottom: 10px
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            width: 0
+            right: 0
+            bottom: 0
+            height: 5px
+            background-color: #f24
+            transition: width .2s
+.products
+    position: relative
+    width: 100%
+    height: 700px
+    background-color: #E0E0E0
+    text-align: center
+    
+
+    .wor,.product
+        position: relative
+        z-index: 0.9
+
+    .bgcpic
+        position: absolute
+        font-size: clamp(50px , 20vw , 700px)
+        width: 100%
+        height: 100%
+        font-weight: 600
+        display: flex
+        align-items: center
+        color: #EBEBEB 
+        opacity: 0.4
+
+    .wor
+        position: relative
+        padding-top: 3%
+        text-align: center
+        .title
+            font-size: 46px
+            font-weight: 700
+        .in
+            font-size: 26px
+            opacity: 0.6
+    .product
+        display: flex
+        justify-content: space-around
+        .pd
+            position: relative
+            margin-top: 3%
+            cursor: pointer
+        .name
+            font-size: 36px
+            margin-top: 8%
+        .top
+            position: absolute
+            font-size: 20px
+            height: 100px
+            width: 100px
+            border-radius: 100%
+            top: -30px
+            right: -50px    
+            
+            .boxname
+                position: relative
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+                color: #402A2C
+        .box1
+            background-color: #D7DAE5
+        .box2
+            background-color: #A6D8D4
+        .box3
+            background-color: #C09BD8
+.others
+    position: relative
+    padding: 50px
+    display: flex
+    justify-content: space-between
+    background-color: #E0E0E0
+    .bbox-left
+        width: 800px
+        height: 400px
+        background-color:  #669BBC
+        display: flex
+        align-items: center
+        justify-content: space-around
+        &:hover
+            .redmore
+                &::after
+                    width: 100%
+                    right: auto
+                    left: 0
+
+        .titlename
+            font-size: 36px
+            font-weight: 700
+        .innerpro
+            font-size: 22px
+        .redmore
+            font-size: 12px
+            font-weight: 900
+            display: inline-block
+            position: relative
+            padding-bottom: 5px
+            &::after
+                content: ''
+                display: block
+                position: absolute
+                width: 0
+                right: 0
+                bottom: 0
+                height: 5px
+                background-color: #f24
+                transition: width .2s
+
+    .bbox-right
+        width: 800px
+        height: 400px
+        background-color:  #615D6C
+        display: flex
+        justify-content: space-around
+        align-items: center
+
+        .conname
+            font-size: 18px
+            font-weight: 700
+        .conaddr
+            font-size: 36px
+            font-weight: 700
+        .coninner
+            font-size: 22px
+        
+        .searchs
+            width: 400px
+            height: 50px
+            display: flex
+            align-items:  center
+            justify-content: space-between
+
+            .search-bg
+                width: 130px
+                height: 40px
+                background-color: #96939B
+                border-radius: 20px
+                display: flex
+                align-items: center
+                justify-content: space-evenly
+                cursor: pointer
+                .search-icon
+                    
+                    .poin
+                        
+                        width: 24px
+                        height: 24px
+                        opacity: 0.5
+                        font-size: 25px
+                       
+                .search-word
+                    display: inline
+                    font-size: 18px
+                    color: #fff
+                    font-weight: 700
+
+            .searcharea
+                position: relative
+                width: 200px
+                height: 40px
+                background-color: #6F8AB7
+                border-radius: 20px
+                display: flex
+                align-items: center
+                justify-content: space-around
+
+                .search-input
+                    width: 150px
+                    text-align: center 
+                    font-size: 18px
+                    display: inline-block
+                    font-weight: 700
+                    color: #fff
+                    border-right: solid 1px white
+                    cursor: pointer
+
+                .search-ico  //放大鏡 icon
+                    position: relative
+                    height: 17px
+                    width: 20px
+                    cursor: pointer
+                    opacity: 0.5
+
+.aboutbgimg
+    position: relative
+    // height: 760px
+    padding: 200px 0
+    background-image: url("./icon/about/bgimg.jpg")
+    // position: absolute
+    // background-position: center center
+    // width: 100%
+    // height: 80vh
+    // padding: 70px 0px
+
+    
+    
+    .about-tbox
+        position: relative
+        width: 50%
+        height: 57%
+        margin-left: 50%
+        // margintop: 50%
+        // left: 50%
+        transform: translate(-50% , 0)
+        border: solid 1px white
+        cursor: pointer
+        border-radius: 20px
+        backdrop-filter: blur(6px)
+        
+        
+
+        .about-wbox
+            // display: inline-block
+
+            .a 
+                text-align: center
+
+            .word1
+                padding-top: 50px
+                font-size: 16px
+                font-weight: 700
+
+            .word2
+                font-size: 42px
+            
+            .word3
+                font-size: 42px
+                font-weight: 700
+
+            .word4
+                font-size: 22px
+                font-weight: 500
+
+        .about-bbox
+            
+            display: flex
+            align-items: stretch
+            text-align: center
+            border-top: solid 1px white
+            
+            .b
+                font-size: 30px
+                padding: 40px   
+                width: 33.3%
+                font-weight: 700
+            
+            .box2,.box3
+                border-left: solid 1px white
+.News-box
+    position: relative
+    background-color: #F4F0FA
+    
+    .News
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 100px 90px 100px 90px 
+       
+        .title
+            font-size: 60px
+            font-weight: 700
+        .inner
+            font-size: 28px
+            opacity: 0.7
+
+        .readbg
+            background-color: #E0CEFD
+            width: 200px
+           
+            text-align: center
+            padding: 15px
+            border-radius: 50px
+
+            .read-word
+                font-size: 20px
+                font-weight: 700
+    .Events
+        display: flex
+        justify-content: space-evenly
+        
+        .eve
+            position: relative
+            height: 500px
+            width: 400px
+            border-radius: 20px
+            overflow: hidden
+            box-shadow: 10px 10px 12px 1px rgba(0,0,0,0.2)
+            margin-bottom: 20px
+
+            .evebgc
+                background-color: #AD8A64
+                height: 330px
+                width: 100%
+
+                .evei
+                    position: absolute
+                    left: 50%
+                    transform: translate(-50% , 0)   
+            
+            .eveword
+                padding: 15px 0 0 20px
+            .evetitle
+                font-size: 18px
+                font-weight: 700 
+            .eveinner
+                font-size: 24px
+            .eveday
+                position: absolute
+                bottom: 10px 
+                
+.sating-line
+    position: relative
+    width: 100% 
+    border-bottom: solid 5px #D4B483
+    padding-top: 50px 
+    background-color: #F4F0FA
+    display: flex 
+    justify-content: flex-end
+    
+    
+
+    .sating-box 
+        display: flex
+
+        .sating-left
+            background-color: #D4B483
+            display: flex
+            padding: 20px 40px 20px 40px
+            border-radius: 15px 0 0 0 
+            align-items: center
+
+        .img
+            width: 50px 
+            height: 50px
+            margin-right: 20px
+
+
+            img
+                width: 100%
+                height: 100%
+
+
+
+        .word
+            font-size: 26px
+            font-weight: 700
+            color: white
+
+        .sating-right
+            display: flex
+            align-items: center
+            cursor: pointer
+
+            .r
+                font-size: 30px
+                width: 50px 
+                height: 30px
+                text-align: center
+            
+            .wd
+                font-size: 20px    
+                font-weight: 700
+                padding-right: 20px
+
+            .word1,.word2
+                border-right: solid 1px rgba(0,0,0,0.2)
+
+.bottom-box 
+    position: relative
+    width: 100%
+    background-color: #F4F0FA
+
+    .bigbox
+        width: 555px
+
+
+        .t-box
+            display: flex
+            align-items: center
+            padding: 100px 0 0 100px
+            .word1
+                font-size: 20px
+                font-weight: 700     
+                padding-right: 20px       
+            .number
+                font-size: 50px
+                font-weight: 700
+                color: #48A9A6
+
+        .m-box
+            display: flex
+            align-items: center
+            padding: 40px 0 0 100px
+            justify-content: space-between
+            .w
+                font-size: 24px
+                font-weight: 700  
+                cursor: pointer  
+
+        .b-box
+            display: flex
+            justify-content: space-between 
+            padding: 40px 0 0 100px
+            
+            .k
+                font-size: 16px
+                color: rgba(0,0,0,0.7)
+                cursor: pointer
+
+    .icon
+        position: relative
+        width: 555px
+        display: flex
+        padding: 40px 0 30px 100px
+        font-size: 30px
+        justify-content: space-between
+
+
+        .ic 
+            cursor: pointer
+            opacity: 0.4
+
+        .goback
+            display: flex
+            cursor: pointer
+            
+            .tword
+                font-size: 18px
+                padding-right: 15px
+                font-weight: 700
+
+            .tbgc
+                
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 25px
+                height: 25px
+                         
+                
+    .end
+        padding: 0 0 50px 100px
+        opacity: 0.5
