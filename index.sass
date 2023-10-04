@@ -18,48 +18,54 @@
     display: flex
     height: 80px
     position: fixed 
+    justify-content: space-between
     top: 0
     left: 0
     width: 100%
     background-color: #DDDFDF
     z-index: 1
 
-
     .top-mark  //公司標章
         width: 120px
         height: 39px
         margin: 20px 0px 0px 30px
         cursor: pointer
-
     .top-other 
         display: flex
-        +center
-
+        margin-left: 15%    
+        align-items: center
         .product,.information,.buy,.about 
             height: 20px
-            margin-left: 15px
+            margin-left: 35px
             cursor: pointer
-            font-weight: 900
-            &:hover
-                transition: 1s
-                color: orange
-                
-    
+            font-weight: 700
+            @media screen and (max-width: 1024px)
+                margin-left: 15px
+        &:hover
+            transition: 1s
+            color: orange
+        @media screen and (max-width: 1024px)
+            margin-left: 0
+        @media screen and (max-width: 768px)
+            display: none
+            
     .top-other2  //搜尋與語言
         position: relative
         display: flex
-        margin-left: auto
-        margin-top: 30px
-        height: 18px
-
+        align-items: center
+        right: 0  
+        // margin-left: auto
+        // margin-top: 30px
+        // height: 18px
+        height: 100%
         .search,.language,.other
             margin-left: 15px   
             height: 18px
             cursor: pointer
             font-weight: 900
-            &:hover
-                transition: 1s
-                color: orange
+        &:hover
+            transition: 1s
+            color: orange
 
         .search
             display: flex
@@ -79,28 +85,26 @@
                 width: 17px
                 margin-right: 5px 
                 
-               
-
 
     .other  //三條線
         display: inline-block
         .line
             border: solid 2px green
             width: 20px
-            margin: 2px 30px 0px 0px
+            margin: 2px 
 
 //naverbar ----------------------------------
 
 // 背景圖片 ------
 .index-pic
     background-image: url("./icon/Umabg1.jpg")
+    width: 100vw
     height: 100vh
     position: fixed
     background-size: cover
     background-position: center center
     top: 0
     left: 0
-    width: 100%
 // 背景圖片 ------
 // 功能列 ------
 .aboutus 
@@ -146,20 +150,21 @@
         margin-top: 60px
         justify-content: space-evenly
         
-        .box-wrap
-        
         .draw
+            position: relative
             width: 180px
             height: 180px
-            border-radius: 100%
-            position: relative
             padding: 10px
+            border-radius: 100%
             overflow: hidden
             box-shadow:  0 0 20px
             cursor: pointer
             &:hover
                 .dra
-                    height: 100%        
+                    height: 100%
+            @media screen and (max-width: 576px)
+                width: 120px
+                height: 120px    
             .pic
                 width: 100%
                 height: 100%
@@ -197,8 +202,11 @@
     display: flex
     position: relative
     cursor: pointer
+    @media screen and (max-width: 768px)
+        display: block
     
     .tbox
+        position: relative
         background-color: #E2FCEF 
         display: flex
         align-items: center
@@ -221,24 +229,28 @@
                     right: auto
                     left: 0
     .box1
+        position: relative
         height: 100%
         width: 50%
+        @media screen and (max-width: 768px)
+            width: 100%
+            height: 50%
     .box2
+        position: relative
         height: 100%
         width: 50%
-
+        @media screen and (max-width: 768px)
+            width: 100%
+            height: 50%
     .title
         width: 250px
         height: 50px
         font-size: 26px
         position: relative
         font-weight: 700
-
     .inner
         width: 300px
         font-size: 14px
-
-    
     .innerread
         width: 100px
         font-size: 12px
@@ -261,11 +273,6 @@
     height: 700px
     background-color: #E0E0E0
     text-align: center
-    
-
-    .wor,.product
-        position: relative
-        z-index: 0.9
 
     .bgcpic
         position: absolute
@@ -277,7 +284,9 @@
         align-items: center
         color: #EBEBEB 
         opacity: 0.4
-
+    .product
+        position: relative
+        z-index: 0.9
     .wor
         position: relative
         padding-top: 3%
@@ -290,14 +299,21 @@
             opacity: 0.6
     .product
         display: flex
-        justify-content: space-around
+        justify-content: space-evenly
         .pd
             position: relative
             margin-top: 3%
             cursor: pointer
+            img
+                width: 80%
         .name
             font-size: 36px
             margin-top: 8%
+            @media screen and (max-width: 1200px)
+                font-size: 30px
+            @media screen and (max-width: 768px)
+                font-size: 26px
+
         .top
             position: absolute
             font-size: 20px
@@ -305,8 +321,11 @@
             width: 100px
             border-radius: 100%
             top: -30px
-            right: -50px    
-            
+            right: -50px   
+            @media screen and (max-width: 1200px)
+                height: 80px
+                width: 80px
+                right: 0
             .boxname
                 position: relative
                 top: 50%
@@ -319,14 +338,16 @@
             background-color: #A6D8D4
         .box3
             background-color: #C09BD8
+
 .others
     position: relative
-    padding: 50px
     display: flex
-    justify-content: space-between
+    width: 100%
     background-color: #E0E0E0
+    @media screen and (max-width: 768px )
+        display: block
     .bbox-left
-        width: 800px
+        width: 50%
         height: 400px
         background-color:  #669BBC
         display: flex
@@ -338,12 +359,20 @@
                     width: 100%
                     right: auto
                     left: 0
+        @media screen and (max-width: 768px )
+            width: 100%
+        .other-left
+            width: 70%
 
         .titlename
             font-size: 36px
             font-weight: 700
+            @media screen and (max-width: 1024px)
+                font-size: 26px
         .innerpro
             font-size: 22px
+            @media screen and (max-width: 1024px)
+                font-size: 18px
         .redmore
             font-size: 12px
             font-weight: 900
@@ -360,145 +389,154 @@
                 height: 5px
                 background-color: #f24
                 transition: width .2s
+        .other.right
+            width: 30%
+            height: 100%
+            .comimg1
+                display: flex
+                width: 100%
+                height: 100%
+                img
+                    width: 100%
+                    margin: auto
 
     .bbox-right
-        width: 800px
+        width: 50%
         height: 400px
         background-color:  #615D6C
         display: flex
         justify-content: space-around
         align-items: center
-
-        .conname
-            font-size: 18px
-            font-weight: 700
-        .conaddr
-            font-size: 36px
-            font-weight: 700
-        .coninner
-            font-size: 22px
-        
-        .searchs
-            width: 400px
-            height: 50px
-            display: flex
-            align-items:  center
-            justify-content: space-between
-
-            .search-bg
-                width: 130px
-                height: 40px
-                background-color: #96939B
-                border-radius: 20px
+        @media screen and (max-width: 768px )
+            width: 100%
+        .compnyname
+            width: 70%
+            .conname
+                font-size: 18px
+                font-weight: 700
+            .conaddr
+                font-size: 36px
+                font-weight: 700
+                @media screen and (max-width: 1024px)
+                    font-size: 26px
+            .coninner
+                font-size: 22px
+                @media screen and (max-width: 1024px)
+                    font-size: 18px
+            
+            .searchs
+                width: 100%
+                height: 50px
                 display: flex
-                align-items: center
-                justify-content: space-evenly
-                cursor: pointer
-                .search-icon
-                    
-                    .poin
+                align-items:  center
+                justify-content: space-between
+
+                .search-bg
+                    width: 130px
+                    height: 40px
+                    background-color: #96939B
+                    border-radius: 20px
+                    display: flex
+                    align-items: center
+                    justify-content: space-evenly
+                    cursor: pointer
                         
+                    .poin
                         width: 24px
                         height: 24px
                         opacity: 0.5
                         font-size: 25px
-                       
-                .search-word
-                    display: inline
-                    font-size: 18px
-                    color: #fff
-                    font-weight: 700
+                    
+                    .search-word
+                        display: inline
+                        font-size: 18px
+                        color: #fff
+                        font-weight: 700
 
-            .searcharea
-                position: relative
-                width: 200px
-                height: 40px
-                background-color: #6F8AB7
-                border-radius: 20px
-                display: flex
-                align-items: center
-                justify-content: space-around
-
-                .search-input
-                    width: 150px
-                    text-align: center 
-                    font-size: 18px
-                    display: inline-block
-                    font-weight: 700
-                    color: #fff
-                    border-right: solid 1px white
-                    cursor: pointer
-
-                .search-ico  //放大鏡 icon
+                .searcharea
                     position: relative
-                    height: 17px
-                    width: 20px
-                    cursor: pointer
-                    opacity: 0.5
+                    width: 200px
+                    height: 40px
+                    background-color: #6F8AB7
+                    border-radius: 20px
+                    display: flex
+                    align-items: center
+                    justify-content: space-around
+                    @media screen and (max-width: 1024px)
+                        display: none
+
+                    .search-input
+                        width: 150px
+                        text-align: center 
+                        font-size: 18px
+                        display: inline-block
+                        font-weight: 700
+                        color: #fff
+                        border-right: solid 1px white
+                        cursor: pointer
+
+                    .search-ico  //放大鏡 icon
+                        position: relative
+                        height: 17px
+                        width: 20px
+                        cursor: pointer
+                        opacity: 0.5
+        .compnyimg 
+            width: 30%
+            height: 100%
+            .comimg2
+                display: flex
+                width: 100%
+                height: 100%
+                img
+                    width: 100%
+                    margin: auto
 
 .aboutbgimg
     position: relative
-    // height: 760px
     padding: 200px 0
     background-image: url("./icon/about/bgimg.jpg")
-    // position: absolute
-    // background-position: center center
-    // width: 100%
-    // height: 80vh
-    // padding: 70px 0px
+    @media screen and (max-width: 768px)
+        padding: 150px 0
 
-    
-    
     .about-tbox
         position: relative
-        width: 50%
+        width: 60%
         height: 57%
         margin-left: 50%
-        // margintop: 50%
-        // left: 50%
         transform: translate(-50% , 0)
         border: solid 1px white
         cursor: pointer
         border-radius: 20px
         backdrop-filter: blur(6px)
+        @media screen and (max-width: 768px)
+            width: 90%
         
-        
-
         .about-wbox
-            // display: inline-block
-
             .a 
                 text-align: center
-
             .word1
                 padding-top: 50px
                 font-size: 16px
                 font-weight: 700
-
             .word2
                 font-size: 42px
-            
             .word3
                 font-size: 42px
                 font-weight: 700
-
             .word4
                 font-size: 22px
                 font-weight: 500
-
         .about-bbox
-            
             display: flex
             align-items: stretch
             text-align: center
             border-top: solid 1px white
-            
             .b
                 font-size: 30px
                 padding: 40px   
                 width: 33.3%
                 font-weight: 700
-            
             .box2,.box3
                 border-left: solid 1px white
 .News-box
@@ -510,18 +548,26 @@
         justify-content: space-between
         align-items: center
         padding: 100px 90px 100px 90px 
-       
+        @media screen and (max-width: 768px)
+            padding: 100px 40px 100px 40px
         .title
             font-size: 60px
             font-weight: 700
+            @media screen and (max-width: 768px)
+                font-size: 40px
+            @media screen and (max-width: 576px)
+                font-size: 30px
         .inner
             font-size: 28px
             opacity: 0.7
+            @media screen and (max-width: 768px)
+                font-size: 24px
+            @media screen and (max-width: 576px)
+                font-size: 18px
 
         .readbg
             background-color: #E0CEFD
             width: 200px
-           
             text-align: center
             padding: 15px
             border-radius: 50px
@@ -529,39 +575,57 @@
             .read-word
                 font-size: 20px
                 font-weight: 700
+                @media screen and (max-width: 576px)
+                    font-size: 16px
     .Events
         display: flex
         justify-content: space-evenly
+        width: 100%
         
         .eve
             position: relative
-            height: 500px
-            width: 400px
+            // height: 500px
+            width: 33%
             border-radius: 20px
             overflow: hidden
             box-shadow: 10px 10px 12px 1px rgba(0,0,0,0.2)
             margin-bottom: 20px
 
             .evebgc
+                // display: flex
                 background-color: #AD8A64
-                height: 330px
+                // height: 330px
                 width: 100%
+                // height: 80%
 
                 .evei
-                    position: absolute
-                    left: 50%
-                    transform: translate(-50% , 0)   
-            
+                    display: flex
+                    width: 100%
+                    img
+                        width: 100%
+                        margin: auto
+                    // position: absolute
+                    // left: 50%
+                    // transform: translate(-50% , 0)   
+
             .eveword
                 padding: 15px 0 0 20px
+                @media screen and (max-width: 1024px)
+                    br
+                        display: none
             .evetitle
                 font-size: 18px
                 font-weight: 700 
             .eveinner
                 font-size: 24px
+                @media screen and (max-width: 1024px)
+                    font-size: 18px
+                @media screen and (max-width: 576px)
+                    font-size: 14px
+
             .eveday
-                position: absolute
-                bottom: 10px 
+                position: relative
+                text-align: right
                 
 .sating-line
     position: relative
@@ -572,8 +636,6 @@
     display: flex 
     justify-content: flex-end
     
-    
-
     .sating-box 
         display: flex
 
@@ -589,17 +651,16 @@
             height: 50px
             margin-right: 20px
 
-
             img
                 width: 100%
                 height: 100%
-
-
 
         .word
             font-size: 26px
             font-weight: 700
             color: white
+            @media screen and (max-width: 768px)
+                font-size: 16px
 
         .sating-right
             display: flex
@@ -611,6 +672,8 @@
                 width: 50px 
                 height: 30px
                 text-align: center
+                @media screen and (max-width: 768px)
+                    font-size: 16px
             
             .wd
                 font-size: 20px    
@@ -623,65 +686,94 @@
 .bottom-box 
     position: relative
     width: 100%
+    height: 100%
     background-color: #F4F0FA
 
     .bigbox
-        width: 555px
-
+        width: 100%
+        height: 100%
 
         .t-box
             display: flex
             align-items: center
-            padding: 100px 0 0 100px
+            @media screen and (max-width: 768px)
+                padding: 0
             .word1
+                margin: 100px 0 0 100px
                 font-size: 20px
                 font-weight: 700     
-                padding-right: 20px       
+                padding-right: 20px  
+                @media screen and (max-width: 576px)
+                    font-size: 16px
+                    margin: 50px 0 0 20px     
             .number
+                margin: 100px 0 0 20px
                 font-size: 50px
                 font-weight: 700
                 color: #48A9A6
+                @media screen and (max-width: 576px)
+                    font-size: 30px
+                    margin: 50px 0 0 20px
 
         .m-box
             display: flex
             align-items: center
-            padding: 40px 0 0 100px
-            justify-content: space-between
+            margin: 20px 0 0 100px
+            @media screen and (max-width: 576px)
+                margin: 20px 0 0 10px
             .w
+                margin: 10px
                 font-size: 24px
                 font-weight: 700  
                 cursor: pointer  
+                @media screen and (max-width: 576px)
+                    font-size: 18px
+            
 
         .b-box
             display: flex
-            justify-content: space-between 
-            padding: 40px 0 0 100px
+            margin: 20px 0 0 100px
+            @media screen and (max-width: 576px)
+                margin: 20px 0 0 10px
             
             .k
+                margin: 10px
                 font-size: 16px
                 color: rgba(0,0,0,0.7)
                 cursor: pointer
 
     .icon
         position: relative
-        width: 555px
+        width: 70%
         display: flex
-        padding: 40px 0 30px 100px
+        margin: 20px 0 0 100px
         font-size: 30px
-        justify-content: space-between
+        @media screen and (max-width: 576px)
+            margin: 20px 0 0 10px
 
 
         .ic 
+            margin: 30px
             cursor: pointer
             opacity: 0.4
 
         .goback
             display: flex
+            position: fixed
+            right: 5%  
+            bottom: 5%
             cursor: pointer
-            
+            animation: updown 3s infinite
+            @keyframes updown
+                0%
+                    bottom: 2%
+                50%
+                    bottom: 5%
+                100%
+                    bottom: 2%
             .tword
                 font-size: 18px
-                padding-right: 15px
+                padding-right: 5px
                 font-weight: 700
 
             .tbgc
@@ -691,8 +783,6 @@
                 align-items: center
                 width: 25px
                 height: 25px
-                         
-                
     .end
-        padding: 0 0 50px 100px
+        margin: 100px 0 0 10px
         opacity: 0.5
