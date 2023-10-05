@@ -6,4 +6,13 @@ $(".info-box").on('mouseenter',function(){
 });
 $(".ribbon").on('mouseleave',function(){
     $(".info-box").css('opacity','1')
+}) 
+
+
+if ($(window).scrollTop() >= 500 ){
+    $(".goback").css("dispaly" , "block")
+}
+
+$(".goback").on("click",function(){
+    $('html,body').animate({scrollTop:0}, 100)
 })
