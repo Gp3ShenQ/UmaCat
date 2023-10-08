@@ -26,13 +26,13 @@
     z-index: 1
 
     .top-mark  //公司標章
-        width: 120px
-        height: 39px
-        margin: 20px 0px 0px 30px
+
+        display: flex
+        align-items: center
+        margin: 0 0 0 20px 
         cursor: pointer
     .top-other 
         display: flex
-        margin-left: 15%    
         align-items: center
         .product,.information,.buy,.about 
             height: 20px
@@ -44,8 +44,8 @@
             &:hover
                 transition: .4s
                 color: orange
-            @media screen and (max-width: 1024px)
-                margin-left: 0
+            // @media screen and (max-width: 1024px)
+            //     margin-left: 0
             @media screen and (max-width: 768px)
                 display: none
             
@@ -127,8 +127,11 @@
             margin-top: 8px
             font-size: 25px
             font-weight: 900
+            text-align: center
+            @media screen and (max-width: 576px)
+                font-size: 18px
         .inner
-            font-size: 5px 
+            font-size: 12px 
 // 功能列 ------
 // 產品分類-----
 .Classification
@@ -147,6 +150,129 @@
         display: flex
         margin-top: 60px
         justify-content: space-evenly
+
+        .aboutCat
+            position: absolute
+            width: 40%
+            height: 80%
+            z-index: 99
+            display: none
+            .bgMask
+                position: absolute
+                width: 250%
+                height: 250%
+                top: -75%
+                left: -75%
+            .aboutMask
+                position: absolute
+                display: none
+                width: 100%
+                height: 100%
+                background-color: black
+                opacity: .7
+                border-radius: 30px
+            .uma
+                position: relative
+                width: 100%
+                height: 100%
+                display: none
+                img
+                    position: relative
+                    width: 50%
+                    border-radius: 30px
+                .rightAbout
+                    position: relative
+                    width: 50%
+                    height: 100%
+                    .close1 
+                        position: absolute
+                        width: 30px
+                        height: 45px
+                        // border-radius: 100% 
+                        right: 10px
+                        top: 10px
+                        cursor: pointer
+                        p
+                            position: absolute
+                            color: white
+                            font-size: 30px
+                            font-weight: 700
+
+                    .cat1
+                        position: relative
+                        margin-top: 30%
+                        h1,h2  
+                            color: white
+                            text-align: left
+                            line-height: 60px
+                            padding-left: 20px
+            .small
+                width: 100%
+                height: 100%
+                display: none
+                img
+                    position: relative
+                    width: 50%
+                    border-radius: 30px
+                .rightAbout
+                    position: relative
+                    width: 50%
+                    height: 100%
+                    .close2
+                        position: absolute
+                        width: 30px
+                        height: 45px
+                        right: 10px
+                        top: 10px
+                        cursor: pointer
+                        p
+                            position: absolute
+                            color: white
+                            font-size: 30px
+                            font-weight: 700
+                    .cat2
+                        position: relative
+                        margin-top: 30%
+                        h1,h2  
+                            color: white
+                            text-align: left
+                            line-height: 60px
+            .start
+                width: 100%
+                height: 100%
+                display: none
+                img
+                    position: relative
+                    width: 50%
+                    border-radius: 30px
+                .rightAbout
+                    position: relative
+                    width: 50%
+                    height: 100%
+                    .close3
+                        position: absolute
+                        width: 30px
+                        height: 45px
+                        right: 10px
+                        top: 10px
+                        cursor: pointer
+                        p
+                            position: absolute
+                            color: white
+                            font-size: 30px
+                            font-weight: 700
+                    .cat3
+                        position: relative
+                        margin-top: 30%
+                        h1,h2  
+                            color: white
+                            text-align: left
+                            line-height: 60px
+    .box-wrap1,.box-wrap2,.box-wrap3
+        p
+            margin-top: 30px
+            font-weight: 900
+            font-size: 30px
         
         .draw
             position: relative
@@ -162,20 +288,17 @@
                     height: 100%
             @media screen and (max-width: 576px)
                 width: 120px
-                height: 120px    
+                height: 120px   
             .pic
                 width: 100%
                 height: 100%
                 border-radius: 100%
                 position: relative
-                top: 50%
-                left: 50%
-                transform: translate(-50% , -50%)
-                // background-color: #fff
-                //-------------- 暫時隱藏
-                // opacity: 0  
-                //-------------- 暫時隱藏
                 overflow: hidden 
+                img
+                    width: 100%
+                    height: 100%
+                    
             
             .dra
                 position: absolute
@@ -188,12 +311,6 @@
                 transition-property: height
                 transition-duration: 1s
             
-        p
-            margin-top: 30px
-            font-weight: 900
-            font-size: 30px
-            
-
 .readme
     height: 300px   
     width: 100%
@@ -285,6 +402,8 @@
     .product
         position: relative
         z-index: 0.9
+        @media screen and (max-width: 768px )
+            margin-top: 100px
     .wor
         position: relative
         padding-top: 3%
@@ -478,6 +597,7 @@
                     display: flex
                     align-items: center
                     justify-content: space-around
+                    margin-right: 20px
                     @media screen and (max-width: 1024px)
                         display: none
 
@@ -607,7 +727,7 @@
         
         .eve
             position: relative
-            width: 33%
+            width: 32%
             border-radius: 20px
             overflow: hidden
             box-shadow: 10px 10px 12px 1px rgba(0,0,0,0.2)
