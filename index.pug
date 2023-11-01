@@ -18,11 +18,11 @@ html(lang="en")
                 .product
                     p 產品專區
                 .information
-                    p 最新消息
+                    p 最新動向
                 .buy
-                    p 哪裡購買
+                    p 哪裡餵食
                 .about 
-                    p 關於我們
+                    p 關於貓咪
             .top-other2
                 .search 
                     .search-icon 
@@ -38,32 +38,43 @@ html(lang="en")
                     .line.line3
         main.main
             .index-pic   
-            .aboutus  
-                .ribbon
-                    .info-box.news
-                        .new-pic
-                            img(src="https://xwadex.com/_wov_/hiQ/assets/img/index/shortcut_60x60_01.svg", alt="")
-                        .new
-                            p.title 最新活動
-                            p.inner 相關最新消息
-                    .info-box.address 
-                        .address-pic 
-                            img(src="https://xwadex.com/_wov_/hiQ/assets/img/index/shortcut_60x60_02.svg", alt="")
-                        .addr
-                            p.title 門市地址
-                            p.inner 查詢門市位置
-                    .info-box.QandAs
-                        .QandA-pic 
-                            img(src="https://xwadex.com/_wov_/hiQ/assets/img/index/shortcut_60x60_03.svg", alt="")
-                        .QA
-                            p.title 常見問題
-                            p.inner 相關問題說明
-                    .info-box.connections 
-                        .connection-pic 
-                            img(src="https://xwadex.com/_wov_/hiQ/assets/img/index/shortcut_60x60_04.svg", alt="")
-                        .connection
-                            p.title 聯絡我們
-                            p.inner 告訴我們您的需求
+            .aboutBox
+              .aboutus
+                  .ribbon
+                      .info-box.news
+                          .new
+                              p.title 最新活動
+                              p.inner 看他們最近去哪玩
+                      .info-box.address
+                          .addr
+                              p.title 餵食地址
+                              p.inner 查詢位置
+                      .info-box.QandAs
+                          .QA
+                              p.title 常見問題
+                              p.inner 相關問題說明
+                      .info-box.connections
+                          .connection
+                              p.title 聯絡我們
+                              p.inner 告訴我們您的需求
+              .evenBox 
+                  .even.evensetting.fix
+                      p 區域建置中
+                  .addrss.evensetting
+                      .map
+                          iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1530.6135157451681!2d120.68836441174628!3d24.15654385772436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d60a776535f%3A0xb31626affe74e842!2z5paw5rCR6auY5LitKOS4ieawkei3ryk!5e0!3m2!1szh-TW!2stw!4v1698753953651!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade", frameborder="0") 
+                  .question.evensetting.fix
+                      p 區域建置中
+                  .us.evensetting
+                      .usBox 
+                          p 姓名
+                          input
+                          p 信箱
+                          input
+                          p 問題
+                          input
+                      .output 
+                          button 送出
             .Classification
                 p.word-top What's Your Need 
                 p.word 選擇想了解的貓咪
@@ -126,14 +137,14 @@ html(lang="en")
             .readme 
                 .tbox.read.box1
                     .readleft
-                        .title.w1 
-                            p Cat snoring ㊣㊣㊣
-                        .inner.w2
-                            p 低分貝的呼嚕，源自睡覺時自然發出的聲音
-                            br
-                            br
-                        .innerread.w5
-                            p READ MORE
+                      .title.w1 
+                          p Cat snoring ㊣㊣㊣
+                      .inner.w2
+                          p 低分貝的呼嚕，源自睡覺時自然發出的聲音
+                          br
+                          br
+                      .innerread.w5
+                          p READ MORE
                 .bbox.read.box2
                     .readright
                         .title.w3 
@@ -214,7 +225,17 @@ html(lang="en")
                                     p 最近探點
                             .searcharea 
                                 .search-input
-                                    p 選擇區域▼
+                                    p 台中區域▼
+                                    .drop-down 
+                                        ul 
+                                            li 北區
+                                            li 北屯區
+                                            li 南區
+                                            li 南屯區
+                                            li 西區
+                                            li 西屯區
+                                            li 中區
+                                            li 東區
                                 .search-ico
                                     .icon-search
                     .compnyimg 
@@ -302,7 +323,6 @@ html(lang="en")
                             img(src="./icon/sating-line/bell.png", alt="")
                         .l.word 
                             p ShenQ & Uma  顧客服務聯絡系統
-
                     .sating-right 
                         .r.img1 
                             .icon-question
@@ -352,10 +372,11 @@ html(lang="en")
                     .ic.yt 
                         .icon-youtube
                     .goback 
-                        .tword
-                            p TOP
-                        .tbgc
-                            .icon-circle-up
+                        .backBox
+                            .tword
+                                p TOP
+                            .tbgc
+                                .icon-circle-up
                 .bottom-box
                 .end
                     p © 2023 ShenQ & Uma cat.All Rights Reserved. Designed by ShenQ.

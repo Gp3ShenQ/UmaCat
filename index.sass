@@ -1,16 +1,32 @@
 *
-    // border: solid 1px black
-    margin: 0px
-    padding: 0px
-    font-family: 微軟正黑體
-    box-sizing: border-box
+  // border: solid 1px black
+  margin: 0px
+  padding: 0px
+  font-family: 微軟正黑體
+  box-sizing: border-box
 
 @mixin center
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50% , -50%)
-    
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50% , -50%)
+
+
+.evensetting
+  width: 90%
+  height: 90%
+  margin: auto
+  border-radius: 20px
+  background-color: #d1bca8
+.fix
+  font-size: 90px
+  text-align: center
+  line-height: 300px
+
+
+.disopen
+  display: block
+
 
 //navbar ----------------------------------
 
@@ -37,6 +53,7 @@
         .product,.information,.buy,.about 
             height: 20px
             margin-left: 35px
+            font-size: 28px
             cursor: pointer
             font-weight: 700
             @media screen and (max-width: 1024px)
@@ -44,8 +61,6 @@
             &:hover
                 transition: .4s
                 color: orange
-            // @media screen and (max-width: 1024px)
-            //     margin-left: 0
             @media screen and (max-width: 768px)
                 display: none
             
@@ -66,23 +81,18 @@
 
         .search
             display: flex
-
             .search-icon   //放大鏡 icon
                 position: relative
                 height: 17px
                 width: 20px
-
-
         .language
             display: flex
-        
             .language-icon  //地球icon
                 position: relative
                 height: 17px
                 width: 17px
                 margin-right: 5px 
                 
-
     .other  //三條線
         display: inline-block
         .line
@@ -96,13 +106,13 @@
 
 .index-pic
     width: 100% 
-    height: 100vh
+    height: 100%
     position: fixed
     background-size: cover
     background-position: center center
     top: 0
     left: 0
-    background-image: url("./icon/Umabg1.jpg")
+    background-image: url("./icon/Umabg2.jpg")
 // 背景圖片 ------
 // 功能列 ------
 .aboutus 
@@ -111,18 +121,15 @@
     height: 100px
     margin-top: 970px
     background-color: #BBADA0
-
     .ribbon
         +center
         display: flex
         width: 100%
         justify-content: space-evenly
-
         .info-box
             display: flex
             cursor: pointer
             color: #fff
-
         .title
             margin-top: 8px
             font-size: 25px
@@ -133,6 +140,50 @@
         .inner
             font-size: 12px 
 // 功能列 ------
+
+.evenBox 
+    position: relative
+    width: 100%
+    height: 0
+    background-color: #BBADA0
+    transition-duration: .2s
+    &.openanimation
+      height: 500px
+.even
+    // display: none
+.addrss
+    // display: none
+    .map
+        width: 50px
+        height: 50px
+        margin-left: 10%    
+    p
+        margin-left: 35%
+        line-height: 50px
+.question
+  // display: none
+.us
+    // display: none
+    position: relative
+    font-size: 30px
+    align-items: center
+    .usBox 
+        margin: 0 auto
+        padding-top: 60px
+        width: 60%
+    input
+        width: 100%  
+        font-size: 40px
+        height: 40px
+    .output 
+        margin: 0 0 0 70%
+        display: inline-block
+      
+        button
+            font-size: 30px
+            height: 70px
+            width: 70px
+
 // 產品分類-----
 .Classification
     position: relative
@@ -150,7 +201,6 @@
         display: flex
         margin-top: 60px
         justify-content: space-evenly
-
         .aboutCat
             position: absolute
             width: 40%
@@ -197,7 +247,6 @@
                             color: white
                             font-size: 30px
                             font-weight: 700
-
                     .cat1
                         position: relative
                         margin-top: 30%
@@ -273,7 +322,6 @@
             margin-top: 30px
             font-weight: 900
             font-size: 30px
-        
         .draw
             position: relative
             width: 180px
@@ -299,7 +347,6 @@
                     width: 100%
                     height: 100%
                     
-            
             .dra
                 position: absolute
                 width: 100%
@@ -310,7 +357,6 @@
                 display: block
                 transition-property: height
                 transition-duration: 1s
-            
 .readme
     height: 300px   
     width: 100%
@@ -319,10 +365,9 @@
     cursor: pointer
     @media screen and (max-width: 768px)
         display: block
-    
     .tbox
         position: relative
-        background-color: #E2FCEF 
+        background-color: #E2FCEF
         display: flex
         align-items: center
         justify-content: space-around
@@ -331,7 +376,9 @@
                 &::after
                     width: 100%
                     right: auto
-                    left: 0
+                    left: 0                                 
+        .redleft
+          position: absolute
     .bbox
         background-color: #BFBFBF
         display: flex
@@ -358,10 +405,10 @@
             width: 100%
             height: 50%
     .title
+        position: relative
         width: 250px
         height: 50px
         font-size: 26px
-        position: relative
         font-weight: 700
     .inner
         width: 300px
@@ -388,7 +435,6 @@
     height: 700px
     background-color: #E0E0E0
     text-align: center
-
     .bgcpic
         position: absolute
         font-size: clamp(50px , 20vw , 700px)
@@ -430,7 +476,6 @@
                 font-size: 30px
             @media screen and (max-width: 768px)
                 font-size: 26px
-
         .top
             position: absolute
             font-size: 20px
@@ -479,7 +524,6 @@
             width: 100%
         .other-left
             width: 70%
-
         .titlename
             margin-left: 50px
             font-size: 36px
@@ -557,14 +601,12 @@
                     font-size: 18px
                 @media screen and (max-width: 768px)
                     margin-left: 10px
-            
             .searchs
                 width: 100%
                 height: 50px
                 display: flex
                 align-items:  center
                 justify-content: space-between
-
                 .search-bg
                     width: 130px
                     height: 40px
@@ -587,7 +629,6 @@
                         font-size: 18px
                         color: #fff
                         font-weight: 700
-
                 .searcharea
                     position: relative
                     width: 200px
@@ -600,7 +641,6 @@
                     margin-right: 20px
                     @media screen and (max-width: 1024px)
                         display: none
-
                     .search-input
                         width: 150px
                         text-align: center 
@@ -610,6 +650,45 @@
                         color: #fff
                         border-right: solid 1px white
                         cursor: pointer
+                    .drop-down 
+                        display: none
+                        width: 100%
+                        max-height: 250px 
+                        position: absolute
+                        color: #333
+                        margin-top: 10px
+                        background-color: #f9f9f9
+                        box-shadow: 0px 2px 3px 0px #ccc
+                        border-radius: 6px
+                        overflow: auto   
+                        z-index: 1
+                        &.open
+                            display: block
+                    li 
+                        // display: block
+                        color: #000
+                        padding: 12px
+                        font-size: 20px
+                        margin: 0 10px
+                        cursor: pointer
+                        &:first-child 
+                            // margin: 10px
+                        &:last-child 
+                            // margin-bottom: 10px
+                        &:hover 
+                            background-color: orange 
+                            border-radius: 6px
+                        &::-webkit-scrollbar 
+                            width: 15px 
+                        &::-webkit-scrollbar-track 
+                            background-color: #eee
+                            border-radius: 6px
+                        &::-webkit-scrollbar-thumb 
+                            background-color: #6F8AB7
+                            border-radius: 15px
+                        &::-webkit-scrollbar-button 
+                            background-color: #f9f9f9
+
 
                     .search-ico  //放大鏡 icon
                         position: relative
@@ -634,7 +713,6 @@
     background-image: url("./icon/about/bgimg.jpg")
     @media screen and (max-width: 768px)
         padding: 150px 0
-
     .about-tbox
         position: relative
         width: 60%
@@ -647,7 +725,6 @@
         backdrop-filter: blur(6px)
         @media screen and (max-width: 768px)
             width: 90%
-        
         .about-wbox
             .a 
                 text-align: center
@@ -678,7 +755,6 @@
 .News-box
     position: relative
     background-color: #F4F0FA
-    
     .News
         display: flex
         justify-content: space-between
@@ -700,7 +776,6 @@
                 font-size: 24px
             @media screen and (max-width: 576px)
                 font-size: 18px
-
         .Read 
             transition: .3s
             &:hover
@@ -714,7 +789,6 @@
             padding: 15px
             border-radius: 50px
             cursor: pointer
-
             .read-word
                 font-size: 20px
                 font-weight: 700
@@ -724,7 +798,6 @@
         display: flex
         justify-content: space-evenly
         width: 100%
-        
         .eve
             position: relative
             width: 32%
@@ -768,10 +841,8 @@
     background-color: #F4F0FA
     display: flex 
     justify-content: flex-end
-    
     .sating-box 
         display: flex
-
         .sating-left
             background-color: #D4B483
             display: flex
@@ -851,13 +922,11 @@
                 cursor: pointer  
                 @media screen and (max-width: 576px)
                     font-size: 18px
-            
         .b-box
             display: flex
             margin: 20px 0 0 100px
             @media screen and (max-width: 576px)
                 margin: 20px 0 0 10px
-            
             .k
                 margin: 10px
                 font-size: 16px
@@ -876,9 +945,8 @@
             cursor: pointer
             opacity: 0.4
         .goback
-            display: flex
-            position: fixed
             display: none
+            position: fixed
             right: 5%  
             bottom: 5%
             cursor: pointer
@@ -890,6 +958,8 @@
                     bottom: 5%
                 100%
                     bottom: 2%
+            .backBox
+                display: flex           
             .tword
                 font-size: 18px
                 padding-right: 5px
