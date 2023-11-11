@@ -13,7 +13,8 @@ html(lang="en")
     body 
         .top_bar 
             .top-mark
-                h1 ShenQ
+                a(href="https://gp3shenq.github.io/" target="_blank") 
+                    h1 ShenQ
             .top-other 
                 .product
                     p 產品專區
@@ -49,32 +50,32 @@ html(lang="en")
                           .addr
                               p.title 餵食地址
                               p.inner 查詢位置
-                      .info-box.QandAs
-                          .QA
-                              p.title 常見問題
-                              p.inner 相關問題說明
                       .info-box.connections
                           .connection
                               p.title 聯絡我們
                               p.inner 告訴我們您的需求
               .evenBox 
                   .even.evensetting.fix
-                      p 區域建置中
+                      .even-flex-wrap
+                        .even-info-box
+                            img(src="", alt="")
+                            .text 
+                                p.title 貓貓見面會
+                                p 帶上您的愛貓，來參加這個難以忘懷的貓咪見面會，讓我們一同慶祝這些美妙生物。
                   .addrss.evensetting
-                      .map
-                          iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1530.6135157451681!2d120.68836441174628!3d24.15654385772436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d60a776535f%3A0xb31626affe74e842!2z5paw5rCR6auY5LitKOS4ieawkei3ryk!5e0!3m2!1szh-TW!2stw!4v1698753953651!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade", frameborder="0") 
-                  .question.evensetting.fix
-                      p 區域建置中
+                    .even-flex-wrap
+                        .even-info-box
+                            .map
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.5821085856373!2d120.65913158583153!3d24.151309717585583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d9dd9fe0011%3A0x6f9d8ebd38727566!2z5Yuk576OIOiqoOWTgee2oOWckumBkw!5e0!3m2!1szh-TW!2stw!4v1699710829651!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                   .us.evensetting
                       .usBox 
-                          p 姓名
-                          input
-                          p 信箱
-                          input
-                          p 問題
-                          input
-                      .output 
-                          button 送出
+                          p 姓名:
+                          input(placeholder="請填寫您的姓名")
+                          p 信箱:
+                          input(placeholder="請填寫您的聯絡信箱")
+                          p 問題:
+                          textarea(placeholder="請描述您的問題")
+                      button 送出
             .Classification
                 p.word-top What's Your Need 
                 p.word 選擇想了解的貓咪
@@ -83,38 +84,41 @@ html(lang="en")
                         .aboutMask
                         .bgMask
                         .uma 
-                            img(src="./icon/about/uma.jpg", alt="")
-                            .rightAbout
-                                .close1 
-                                    p X 
-                                .cat1
-                                    h1 名子 : Uma
-                                    h1 性別 : 男
-                                    h1 品種 : 米克斯-虎斑
-                                    h1 年紀 : 2.5歲
-                                    h2 個性 : 安靜，冷靜，高冷
+                            .box-flex
+                                img(src="./icon/about/uma.jpg", alt="")
+                                .rightAbout
+                                    .close1 
+                                        p X 
+                                    .cat1
+                                        h1 名子 : Uma
+                                        h1 性別 : 男
+                                        h1 品種 : 米克斯-虎斑
+                                        h1 年紀 : 2.5歲
+                                        h2 個性 : 安靜，冷靜，高冷
                         .small 
-                            img(src="./icon/about/small.jpg", alt="")
-                            .rightAbout
-                                .close2
-                                    p X 
-                                .cat2
-                                    h1 名子 : 小隻
-                                    h1 性別 : 女
-                                    h1 品種 : 米克斯-三花
-                                    h1 年紀 : 1.X歲
-                                    h2 個性 : 膽小，愛撒嬌，勇於嘗試
+                            .box-flex
+                                img(src="./icon/about/small.jpg", alt="")
+                                .rightAbout
+                                    .close2
+                                        p X 
+                                    .cat2
+                                        h1 名子 : 小隻
+                                        h1 性別 : 女
+                                        h1 品種 : 米克斯-三花
+                                        h1 年紀 : 1.X歲
+                                        h2 個性 : 膽小，愛撒嬌，勇於嘗試
                         .start
-                            img(src="./icon/about/start.jpg", alt="")
-                            .rightAbout
-                                .close3
-                                    p X 
-                                .cat3
-                                    h1 名子 : 星碳
-                                    h1 性別 : 男
-                                    h1 品種 : 米克斯-賓士
-                                    h1 年紀 : 0.6歲
-                                    h2 個性 : 愛說話，大膽，親人
+                            .box-flex
+                                img(src="./icon/about/start.jpg", alt="")
+                                .rightAbout
+                                    .close3
+                                        p X 
+                                    .cat3
+                                        h1 名子 : 星碳
+                                        h1 性別 : 男
+                                        h1 品種 : 米克斯-賓士
+                                        h1 年紀 : 0.6歲
+                                        h2 個性 : 愛說話，大膽，親人
                     .box-wrap1
                         .draw.num1
                             .dra.n1

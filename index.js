@@ -13,37 +13,51 @@
       if(!$('.aboutBox')[0].contains(e.target)) {$(".evenBox").removeClass("openanimation"); $(".info-box").css("opacity","1")}
     })
 
-$(".info-box").on('click',function(){
-  $(".info-box").css('opacity','0.3')
-  $(this).css("opacity","1")
-  $(this).css("display", "block")
-  $(".evenBox").addClass("openanimation")
-})
+// $(".info-box").on('click',function(){
+//   $(".info-box").css('opacity','0.3')
+//   $(this).css("opacity","1")
+//   $(this).css("display", "block")
+//   $(".evenBox").addClass("openanimation")
+// })
 
-$(".news").on("click",function(){
-  $(".even").show()
-  $(".addrss").hide()
-  $(".question").hide()
-  $(".us").hide()
+// $(".news").on("click",function(){
+//   $(".even").show()
+//   $(".addrss").hide()
+//   $(".question").hide()
+//   $(".us").hide()
 
-})
-$(".addr").on("click",function(){
-  $(".addrss").show()
-  $(".even").hide()
-  $(".question").hide()
-  $(".us").hide()
-})
-$(".QA").on("click",function(){
-  $(".question").show()
-  $(".addrss").hide()
-  $(".even").hide()
-  $(".us").hide()
-})
-$(".connection").on("click",function(){
-  $(".us").show()
-  $(".addrss").hide()
-  $(".question").hide()
-  $(".even").hide()
+// })
+// $(".addr").on("click",function(){
+//   $(".addrss").show()
+//   $(".even").hide()
+//   $(".question").hide()
+//   $(".us").hide()
+// })
+// $(".QA").on("click",function(){
+//   $(".question").show()
+//   $(".addrss").hide()
+//   $(".even").hide()
+//   $(".us").hide()
+// })
+// $(".connection").on("click",function(){
+//   $(".us").show()
+//   $(".addrss").hide()
+//   $(".question").hide()
+//   $(".even").hide()
+// })
+let boxIndex;
+$('.info-box').on('click',function(){
+  if(boxIndex != $(this).index()){
+    $('.evensetting').hide()
+    $('.evensetting').eq($(this).index()).fadeIn()
+  }
+  if(!$('.evenBox').hasClass('expand')){
+    $('.evenBox').slideDown()
+    $('.evenBox').addClass('expand')
+  }else if(boxIndex == $(this).index()){
+    $('.evenBox').removeClass('expand').slideUp()
+  }
+  boxIndex = $(this).index()
 })
 
 
@@ -85,7 +99,7 @@ $(".box-wrap3").on("click",function(){
 
 
 function catBox(name){
-  $(name).css("display" , "flex") 
+  $(name).fadeIn()
   $(".aboutMask").css("display" , "block")
   $(".aboutCat").css("display" , "block")
   $(".bgMask").css("display" , "block")

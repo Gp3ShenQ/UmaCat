@@ -13,10 +13,36 @@
   margin: auto;
   border-radius: 20px;
   background-color: #d1bca8;
+  display: none;
+}
+.evensetting .even-flex-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px 0;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  color: #000;
+}
+.evensetting .even-flex-wrap .even-info-box {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.evensetting .even-flex-wrap img {
+  width: 50%;
+}
+.evensetting .even-flex-wrap .text {
+  width: 50%;
+  font-size: 18px;
+  line-height: normal;
 }
 
 .fix {
-  font-size: 90px;
+  font-size: 60px;
+  letter-spacing: 10px;
   text-align: center;
   line-height: 300px;
 }
@@ -36,8 +62,11 @@
   width: 100%;
   background-color: #DDDFDF;
   z-index: 1;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .top_bar .top-mark {
+  color: #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,6 +75,16 @@
           align-items: center;
   margin: 0 0 0 20px;
   cursor: pointer;
+}
+.top_bar .top-mark a {
+  color: #000;
+  -webkit-text-decoration: auto;
+          text-decoration: auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.top_bar .top-mark a:hover {
+  color: orange;
 }
 .top_bar .top-other {
   width: 50%;
@@ -64,7 +103,7 @@
 }
 .top_bar .top-other .product, .top_bar .top-other .information, .top_bar .top-other .buy, .top_bar .top-other .about {
   margin: 0 auto;
-  font-size: 28px;
+  font-size: 24px;
   cursor: pointer;
   font-weight: 700;
 }
@@ -121,7 +160,33 @@
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
+  color: #eee;
+  -webkit-transition: color 0.5s, -webkit-filter 0.5s;
+  transition: color 0.5s, -webkit-filter 0.5s;
+  transition: color 0.5s, filter 0.5s;
+  transition: color 0.5s, filter 0.5s, -webkit-filter 0.5s;
+}
+.aboutus .ribbon .info-box > * {
+  position: relative;
+}
+.aboutus .ribbon .info-box > *::after {
+  content: "⌵";
+  display: block;
+  position: absolute;
+  font-size: 20px;
+  right: -25px;
+  top: 8px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.aboutus .ribbon .info-box:hover {
   color: #fff;
+  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+.aboutus .ribbon .info-box:hover > *::after {
+  opacity: 1;
 }
 .aboutus .ribbon .title {
   margin-top: 8px;
@@ -139,20 +204,16 @@
 }
 
 .evenBox {
+  padding: 50px;
   position: relative;
   width: 100%;
-  height: 0;
   background-color: #BBADA0;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-}
-.evenBox.openanimation {
-  height: 500px;
+  display: none;
 }
 
 .addrss .map {
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: auto;
   margin-left: 10%;
 }
 .addrss p {
@@ -162,29 +223,47 @@
 
 .us {
   position: relative;
-  font-size: 30px;
+  font-size: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 30px;
 }
 .us .usBox {
   margin: 0 auto;
-  padding-top: 60px;
   width: 60%;
+  max-width: 800px;
+}
+.us p {
+  margin-top: 10px;
 }
 .us input {
+  font-size: 16px;
+  padding-inline: 10px;
   width: 100%;
-  font-size: 40px;
   height: 40px;
+  border-radius: 10px;
+  border: solid 2px #333;
+  margin-top: 10px;
 }
-.us .output {
-  margin: 0 0 0 70%;
-  display: inline-block;
+.us textarea {
+  resize: none;
+  margin-top: 10px;
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  border: solid 2px #333;
+  padding: 10px;
+  font-size: 16px;
 }
-.us .output button {
-  font-size: 30px;
-  height: 70px;
-  width: 70px;
+.us button {
+  display: block;
+  margin-inline: auto;
+  margin: 20px auto 0;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 80px;
+  height: 30px;
 }
 
 .Classification {
@@ -234,16 +313,26 @@
   opacity: 0.7;
   border-radius: 30px;
 }
+.Classification .commoditys .aboutCat .box-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
 .Classification .commoditys .aboutCat .uma {
   position: relative;
   width: 100%;
   height: 100%;
   display: none;
+  padding: 30px;
 }
 .Classification .commoditys .aboutCat .uma img {
   position: relative;
   width: 50%;
+  height: 100%;
   border-radius: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .Classification .commoditys .aboutCat .uma .rightAbout {
   position: relative;
@@ -283,6 +372,8 @@
   position: relative;
   width: 50%;
   border-radius: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .Classification .commoditys .aboutCat .small .rightAbout {
   position: relative;
@@ -1066,10 +1157,13 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 100%;
+  max-width: 1700px;
+  margin-inline: auto;
+  gap: 60px;
 }
 .News-box .Events .eve {
   position: relative;
-  width: 32%;
+  width: 30%;
   border-radius: 20px;
   overflow: hidden;
   -webkit-box-shadow: 10px 10px 12px 1px rgba(0, 0, 0, 0.2);
@@ -1085,13 +1179,14 @@
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  padding: 50px;
 }
 .News-box .Events .eve .evebgc .evei img {
-  width: 100%;
+  width: 80%;
   margin: auto;
 }
 .News-box .Events .eve .eveword {
-  padding: 15px 0 0 20px;
+  padding: 30px;
 }
 @media screen and (max-width: 1024px) {
   .News-box .Events .eve .eveword br {
@@ -1119,6 +1214,7 @@
   position: relative;
   text-align: right;
   right: 20px;
+  margin-top: 30px;
 }
 
 .sating-line {

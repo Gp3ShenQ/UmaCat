@@ -18,8 +18,27 @@
   margin: auto
   border-radius: 20px
   background-color: #d1bca8
+  display: none
+  .even-flex-wrap
+    display: flex
+    padding: 50px 0
+    height: 100%
+    position: relative
+    z-index: 1
+    color: #000
+    .even-info-box
+        margin: auto
+        display: flex
+    img
+        width: 50%
+    .text
+        width: 50%
+        font-size: 18px
+        line-height: normal
+
 .fix
-  font-size: 90px
+  font-size: 60px
+  letter-spacing: 10px
   text-align: center
   line-height: 300px
 
@@ -39,13 +58,21 @@
     width: 100%
     background-color: #DDDFDF
     z-index: 1
+    box-shadow: 0 0 5px rgba(0,0,0,.5)
 
     .top-mark  //公司標章
-
+        color: #000
         display: flex
         align-items: center
         margin: 0 0 0 20px 
         cursor: pointer
+        a
+            color: #000
+            text-decoration: auto
+            transition: all .3s
+            &:hover
+                color: orange
+        
     .top-other 
         width: 50%
         margin: 0 auto
@@ -55,7 +82,7 @@
                 width: 70%
         .product,.information,.buy,.about 
             margin: 0 auto
-            font-size: 28px
+            font-size: 24px
             cursor: pointer
             font-weight: 700
             @media screen and (max-width: 1024px)
@@ -132,7 +159,24 @@
         .info-box
             display: flex
             cursor: pointer
-            color: #fff
+            color: #eee
+            transition: color .5s, filter .5s
+            > *
+                position: relative
+                &::after
+                    content: '⌵'
+                    display: block
+                    position: absolute
+                    font-size: 20px
+                    right: -25px
+                    top: 8px
+                    opacity: 0  
+                    transition: opacity .5s      
+            &:hover
+                color: #fff
+                filter: drop-shadow(0 0 5px rgba(0,0,0,.5))
+                > *::after
+                    opacity: 1
         .title
             margin-top: 8px
             font-size: 25px
@@ -145,20 +189,21 @@
 // 功能列 ------
 
 .evenBox 
+    padding: 50px
     position: relative
     width: 100%
-    height: 0
+    // height: 0
     background-color: #BBADA0
-    transition-duration: .2s
-    &.openanimation
-      height: 500px
+    display: none
+    // &.openanimation
+    //   height: 500px
 .even
     // display: none
 .addrss
     // display: none
     .map
-        width: 50px
-        height: 50px
+        width: 100%
+        height: auto
         margin-left: 10%    
     p
         margin-left: 35%
@@ -168,24 +213,40 @@
 .us
     // display: none
     position: relative
-    font-size: 30px
+    font-size: 20px
     align-items: center
+    padding: 30px
     .usBox 
         margin: 0 auto
-        padding-top: 60px
         width: 60%
+        max-width: 800px
+    p
+        margin-top: 10px
     input
+        font-size: 16px
+        padding-inline: 10px
         width: 100%  
-        font-size: 40px
         height: 40px
-    .output 
-        margin: 0 0 0 70%
-        display: inline-block
-      
-        button
-            font-size: 30px
-            height: 70px
-            width: 70px
+        border-radius: 10px
+        border: solid 2px #333
+        margin-top: 10px
+    textarea
+        resize: none
+        margin-top: 10px
+        width: 100%
+        height: 80px
+        border-radius: 10px
+        border: solid 2px #333
+        padding: 10px
+        font-size: 16px
+    button
+        display: block
+        margin-inline: auto
+        margin: 20px auto 0
+        font-size: 16px
+        border-radius: 10px
+        width: 80px
+        height: 30px
 
 // 產品分類-----
 .Classification
@@ -224,15 +285,21 @@
                 background-color: black
                 opacity: .7
                 border-radius: 30px
+            .box-flex
+                display: flex
+                height: 100%
             .uma
                 position: relative
                 width: 100%
                 height: 100%
                 display: none
+                padding: 30px
                 img
                     position: relative
                     width: 50%
+                    height: 100%
                     border-radius: 30px
+                    object-fit: contain
                 .rightAbout
                     position: relative
                     width: 50%
@@ -266,6 +333,7 @@
                     position: relative
                     width: 50%
                     border-radius: 30px
+                    object-fit: contain
                 .rightAbout
                     position: relative
                     width: 50%
@@ -801,9 +869,12 @@
         display: flex
         justify-content: space-evenly
         width: 100%
+        max-width: 1700px
+        margin-inline: auto
+        gap: 60px
         .eve
             position: relative
-            width: 32%
+            width: 30%
             border-radius: 20px
             overflow: hidden
             box-shadow: 10px 10px 12px 1px rgba(0,0,0,0.2)
@@ -814,11 +885,12 @@
                 .evei
                     display: flex
                     width: 100%
+                    padding: 50px
                     img
-                        width: 100%
+                        width: 80%
                         margin: auto 
             .eveword
-                padding: 15px 0 0 20px
+                padding: 30px
                 @media screen and (max-width: 1024px)
                     br
                         display: none
@@ -835,6 +907,7 @@
                 position: relative
                 text-align: right
                 right: 20px
+                margin-top: 30px
                 
 .sating-line
     position: relative
