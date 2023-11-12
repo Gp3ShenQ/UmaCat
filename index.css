@@ -119,7 +119,7 @@
 }
 @media screen and (max-width: 768px) {
   .top_bar .top-other .product, .top_bar .top-other .information, .top_bar .top-other .buy, .top_bar .top-other .about {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -211,10 +211,19 @@
   display: none;
 }
 
+.addrss {
+  position: relative;
+}
 .addrss .map {
   width: 100%;
   height: auto;
-  margin-left: 10%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .addrss .map iframe {
+    width: 100%;
+    height: auto;
+  }
 }
 .addrss p {
   margin-left: 35%;
@@ -320,7 +329,6 @@
   height: 100%;
 }
 .Classification .commoditys .aboutCat .uma {
-  position: relative;
   width: 100%;
   height: 100%;
   display: none;
@@ -411,7 +419,10 @@
 .Classification .commoditys .aboutCat .start img {
   position: relative;
   width: 50%;
+  height: 100%;
   border-radius: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .Classification .commoditys .aboutCat .start .rightAbout {
   position: relative;
@@ -634,6 +645,11 @@
   font-size: 46px;
   font-weight: 700;
 }
+@media screen and (max-width: 576px) {
+  .products .wor .title p {
+    font-size: 30;
+  }
+}
 .products .wor .in {
   font-size: 26px;
   opacity: 0.6;
@@ -653,6 +669,16 @@
 }
 .products .product .pd img {
   width: 80%;
+}
+.products .product .pd a {
+  color: #000;
+  -webkit-text-decoration: auto;
+          text-decoration: auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.products .product .pd a:hover {
+  color: orange;
 }
 .products .product .name {
   font-size: 36px;
@@ -682,6 +708,13 @@
     height: 80px;
     width: 80px;
     right: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .products .product .top {
+    height: 40px;
+    height-width: 40px;
+    height-right: 0;
   }
 }
 .products .product .top .boxname {
@@ -738,6 +771,11 @@
 }
 .others .bbox-left .other-left {
   width: 70%;
+}
+@media screen and (max-width: 768px) {
+  .others .bbox-left .other-left {
+    padding-left: 20px;
+  }
 }
 .others .bbox-left .titlename {
   margin-left: 50px;
@@ -829,6 +867,11 @@
 .others .bbox-right .compnyname {
   width: 70%;
 }
+@media screen and (max-width: 768px) {
+  .others .bbox-right .compnyname {
+    padding-left: 20px;
+  }
+}
 .others .bbox-right .compnyname .conname {
   font-size: 18px;
   font-weight: 700;
@@ -898,6 +941,11 @@
   cursor: pointer;
   margin-left: 50px;
 }
+@media screen and (max-width: 1024px) {
+  .others .bbox-right .compnyname .searchs .search-bg {
+    display: none;
+  }
+}
 .others .bbox-right .compnyname .searchs .search-bg .poin {
   width: 24px;
   height: 24px;
@@ -912,7 +960,7 @@
 }
 .others .bbox-right .compnyname .searchs .searcharea {
   position: relative;
-  width: 200px;
+  width: 180px;
   height: 40px;
   background-color: #6F8AB7;
   border-radius: 20px;
@@ -924,11 +972,16 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-right: 20px;
+  margin-right: 150px;
+}
+@media screen and (max-width: 1440px) {
+  .others .bbox-right .compnyname .searchs .searcharea {
+    margin-right: 30px;
+  }
 }
 @media screen and (max-width: 1024px) {
   .others .bbox-right .compnyname .searchs .searcharea {
-    display: none;
+    margin-left: 40px;
   }
 }
 .others .bbox-right .compnyname .searchs .searcharea .search-input {
@@ -1078,6 +1131,7 @@
   background-color: #F4F0FA;
 }
 .News-box .News {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1087,11 +1141,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 100px 90px 100px 90px;
+  padding: 100px 90px;
 }
 @media screen and (max-width: 768px) {
   .News-box .News {
-    padding: 100px 40px 100px 40px;
+    padding: 100px 40px;
   }
 }
 .News-box .News .title {
@@ -1132,6 +1186,13 @@
   -webkit-box-shadow: 0 0 5px #E0CEFD, 0 0 6px #E0CEFD, 0 0 7px #E0CEFD, 0 0 25px #E0CEFD, 0 0 50px #E0CEFD, 0 0 100px #E0CEFD;
           box-shadow: 0 0 5px #E0CEFD, 0 0 6px #E0CEFD, 0 0 7px #E0CEFD, 0 0 25px #E0CEFD, 0 0 50px #E0CEFD, 0 0 100px #E0CEFD;
 }
+@media screen and (max-width: 576px) {
+  .News-box .News .Read {
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+  }
+}
 .News-box .News .readbg {
   background-color: #E0CEFD;
   width: 200px;
@@ -1161,29 +1222,63 @@
   margin-inline: auto;
   gap: 60px;
 }
+@media screen and (max-width: 768px) {
+  .News-box .Events {
+    display: block;
+  }
+}
+.News-box .Events a {
+  width: 20%;
+  color: #000;
+  -webkit-text-decoration: auto;
+          text-decoration: auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.News-box .Events a:hover {
+  color: orange;
+}
 .News-box .Events .eve {
   position: relative;
-  width: 30%;
+  width: 100%;
   border-radius: 20px;
   overflow: hidden;
   -webkit-box-shadow: 10px 10px 12px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 10px 10px 12px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .News-box .Events .eve {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 80%;
+  }
 }
 .News-box .Events .eve .evebgc {
   background-color: #AD8A64;
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .News-box .Events .eve .evebgc {
+    width: 50%;
+  }
+}
 .News-box .Events .eve .evebgc .evei {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  padding: 50px;
+  padding: 5px;
 }
 .News-box .Events .eve .evebgc .evei img {
-  width: 80%;
   margin: auto;
+  max-width: 250px;
+  min-width: 150px;
 }
 .News-box .Events .eve .eveword {
   padding: 30px;
@@ -1193,9 +1288,19 @@
     display: none;
   }
 }
+@media screen and (max-width: 576px) {
+  .News-box .Events .eve .eveword {
+    padding: 5px;
+  }
+}
 .News-box .Events .eve .evetitle {
   font-size: 18px;
   font-weight: 700;
+}
+@media screen and (max-width: 768px) {
+  .News-box .Events .eve .evetitle {
+    margin-top: 50px;
+  }
 }
 .News-box .Events .eve .eveinner {
   font-size: 24px;
@@ -1220,6 +1325,7 @@
 .sating-line {
   position: relative;
   width: 100%;
+  height: 150px;
   border-bottom: solid 5px #D4B483;
   padding-top: 50px;
   background-color: #F4F0FA;
@@ -1246,10 +1352,28 @@
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (max-width: 768px) {
+  .sating-line .sating-box .sating-left {
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .sating-line .sating-box .sating-left {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    border-radius: 0 0 15px 0;
+  }
+}
 .sating-line .sating-box .img {
   width: 50px;
   height: 50px;
-  margin-right: 20px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1024px) {
+  .sating-line .sating-box .img {
+    display: none;
+  }
 }
 .sating-line .sating-box .img img {
   width: 100%;
